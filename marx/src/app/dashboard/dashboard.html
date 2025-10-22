@@ -1,0 +1,155 @@
+<div class="marx-dashboard">
+  <!-- Header Section -->
+  <header class="dashboard-header">
+    <div class="header-content">
+      <h1>MARX (Application 2)</h1>
+      <div class="user-info">
+        <span class="user-display"
+          >{{ currentUser?.userName || 'Current User' }}</span
+        >
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- User ID and Name Section -->
+  <section class="user-section">
+    <h2>User Information</h2>
+    <div class="user-details">
+      <p><strong>User ID:</strong> {{ currentUser?.userName || 'N/A' }}</p>
+      <p><strong>Name:</strong> {{ currentUser?.userName || 'N/A' }}</p>
+      <p><strong>Role:</strong> {{ currentUser?.role || 'N/A' }}</p>
+    </div>
+  </section>
+
+  <!-- Beneficiary Search Section -->
+  <section class="search-section">
+    <h2>Beneficiary Search</h2>
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
+      <div class="form-group">
+        <label for="beneficiaryId">Beneficiary ID:</label>
+        <input
+          type="text"
+          id="beneficiaryId"
+          formControlName="beneficiaryId"
+          placeholder="Enter beneficiary ID (e.g., BENE001)"
+          class="form-control"
+          [class.error]="beneficiaryId?.invalid && beneficiaryId?.touched"
+        />
+
+        <div
+          *ngIf="beneficiaryId?.invalid && beneficiaryId?.touched"
+          class="error-text"
+        >
+          <div *ngIf="beneficiaryId?.errors?.['required']">
+            Beneficiary ID is required
+          </div>
+          <div *ngIf="beneficiaryId?.errors?.['minlength']">
+            Beneficiary ID must be at least 3 characters
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="search-btn"
+        [disabled]="searchForm.invalid || isLoading"
+      >
+        <span *ngIf="isLoading">Searching...</span>
+        <span *ngIf="!isLoading">Search</span>
+      </button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </section>
+
+  <!-- Beneficiary Payment Details Section -->
+  <section class="details-section" *ngIf="selectedBeneficiary">
+    <h2>Beneficiary Payment Details</h2>
+
+    <div class="beneficiary-info">
+      <h3>Beneficiary Information</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>ID:</label>
+          <span>{{ selectedBeneficiary.id }}</span>
+        </div>
+        <div class="info-item">
+          <label>Name:</label>
+          <span>{{ selectedBeneficiary.name }}</span>
+        </div>
+        <div class="info-item">
+          <label>Status:</label>
+          <span
+            class="status"
+            [class.active]="selectedBeneficiary.status === 'Active'"
+          >
+            {{ selectedBeneficiary.status }}
+          </span>
+        </div>
+        <div class="info-item">
+          <label>Benefits:</label>
+          <span>{{ selectedBeneficiary.benefits.join(', ') }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-details" *ngIf="paymentDetails">
+      <h3>Payment Information</h3>
+      <div class="payment-grid">
+        <div class="payment-item">
+          <label>Last Payment:</label>
+          <span class="amount">{{ paymentDetails.lastPayment }}</span>
+        </div>
+        <div class="payment-item">
+          <label>Payment Date:</label>
+          <span>{{ paymentDetails.paymentDate }}</span>
+        </div>
+        <div class="payment-item">
+          <label>Next Payment:</label>
+          <span class="amount">{{ paymentDetails.nextPayment }}</span>
+        </div>
+        <div class="payment-item">
+          <label>Next Payment Date:</label>
+          <span>{{ paymentDetails.nextPaymentDate }}</span>
+        </div>
+        <div class="payment-item">
+          <label>Payment Method:</label>
+          <span>{{ paymentDetails.paymentMethod }}</span>
+        </div>
+        <div class="payment-item">
+          <label>Account:</label>
+          <span>{{ paymentDetails.accountNumber }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Section -->
+  <section class="navigation-section">
+    <h2>Application Navigation</h2>
+    <div class="nav-buttons">
+      <button
+        class="nav-btn elmo-btn"
+        (click)="navigateToElmo()"
+        [disabled]="!selectedBeneficiary"
+      >
+        <span class="btn-icon">→</span>
+        Link to Application 3 (ELMO)
+        <small *ngIf="selectedBeneficiary"
+          >Transfer: {{ selectedBeneficiary.id }}</small
+        >
+      </button>
+    </div>
+  </section>
+
+  <!-- Demo Info -->
+  <section class="demo-section">
+    <h3>Demo Beneficiary IDs:</h3>
+    <div class="demo-ids">
+      <span class="demo-id">BENE001</span>
+      <span class="demo-id">BENE002</span>
+      <span class="demo-id">BENE003</span>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,12 @@
+{
+  "rajesh": {
+    "userName": "rajeshj",
+    "role": "admin",
+    "preferredApplication": "elmo"
+  },
+  "masha": {
+    "userName": "mashab",
+    "role": "admin",
+    "preferredApplication": "marx"
+  }
+}

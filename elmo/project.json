@@ -1,0 +1,117 @@
+{
+  "name": "elmo",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "elmo/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/elmo",
+        "index": "elmo/src/index.html",
+        "main": "elmo/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "elmo/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "elmo/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "elmo/src/assets",
+            "output": "/assets"
+          }
+        ],
+        "styles": ["elmo/src/styles.scss"],
+        "customWebpackConfig": {
+          "path": "elmo/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "elmo/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "elmo:build:production"
+        },
+        "development": {
+          "buildTarget": "elmo:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "elmo:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "elmo/jest.config.ts",
+        "tsConfig": "elmo/tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "elmo:build",
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "elmo:build:development"
+        },
+        "production": {
+          "buildTarget": "elmo:build:production"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "elmo-e2e",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "elmo-e2e/src",
+  "implicitDependencies": ["elmo"],
+  "// targets": "to see all targets run: nx show project elmo-e2e --web",
+  "targets": {}
+}

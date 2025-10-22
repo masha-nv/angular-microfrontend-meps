@@ -1,0 +1,17 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": false,
+    "target": "es2022",
+    "module": "preserve",
+    "lib": ["es2020", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@org/shared": ["shared/src/index.ts"],
+      "elmo/Routes": ["elmo/src/app/remote-entry/entry.routes.ts"],
+      "marx/Routes": ["marx/src/app/remote-entry/entry.routes.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
