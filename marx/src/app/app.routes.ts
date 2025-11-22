@@ -4,6 +4,6 @@ export const appRoutes: Route[] = [
   {
     path: '',
     loadComponent: () =>
-      import('./dashboard/dashboard').then((m) => m.Dashboard),
+      import('./remote-entry/entry').then((m) => m.RemoteEntry),
   },
 ];

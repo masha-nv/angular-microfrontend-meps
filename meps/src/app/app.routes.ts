@@ -1,5 +1,7 @@
 import { Login } from './login/login';
 import { Route } from '@angular/router';
+import { UserAccount } from './user-account/user-account';
+import { Help } from './help/help';
 
 export const appRoutes: Route[] = [
   {
@@ -13,5 +15,13 @@ export const appRoutes: Route[] = [
   {
     path: '',
     component: Login,
+  },
+  {
+    path: 'user/:username',
+    component: UserAccount,
+  },
+  {
+    path: 'help',
+    component: Help,
   },
 ];

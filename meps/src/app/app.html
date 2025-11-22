@@ -1,1 +1,36 @@
+<mat-toolbar class="toolbar-container">
+  <div class="logo-container">
+    <h1 class="cms-logo">CMS.gov</h1>
+    <mat-divider class="divider" [vertical]="true"></mat-divider>
+    <h2>My Enterprise Portal</h2>
+  </div>
+  <div class="my-apps">
+    <mat-icon>menu</mat-icon>
+    <p class="title">My Apps</p>
+  </div>
+  <div class="actions">
+    <div>
+      <mat-icon>notifications</mat-icon>
+    </div>
+    @if(authService.currentUser$ | async; as user) {
+    <div>
+      <mat-icon>person</mat-icon>
+      <a [routerLink]="[`/user/${user.userName}`]">{{user.userName}}</a>
+    </div>
+    }
+    <div>
+      <mat-icon>help</mat-icon>
+      <a [routerLink]="['/help']">Help</a>
+    </div>
+    <div class="logout">
+      @if(authService.currentUser$ | async; as user) {
+      <mat-icon>logout</mat-icon>
+      <a matButton (click)="logout()">Log Out</a>
+      } @else {
+      <mat-icon>login</mat-icon>
+      <a [routerLink]="['/']">Log In</a>
+      }
+    </div>
+  </div>
+</mat-toolbar>
 <router-outlet></router-outlet>

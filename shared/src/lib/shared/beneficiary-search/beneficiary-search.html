@@ -1,0 +1,7 @@
+<form [formGroup]="searchForm">
+  <mat-form-field appearance="outline">
+    <mat-label for="">Search</mat-label>
+    <input matInput type="search" formControlName="bene" />
+  </mat-form-field>
+  <button [disabled]="searchForm.invalid" mat-button>Search</button>
+</form>
