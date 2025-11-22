@@ -1,0 +1,29 @@
+<div class="marx-app">
+  <mat-toolbar class="marx-toolbar">
+    <div class="marx-logo">
+      <h1>MARx</h1>
+      <div class="subtitle">
+        <span>Medicare Advatage</span>
+        <span>Prescription Drug</span>
+      </div>
+    </div>
+    <mat-tab-group>
+      <mat-tab label="Beneficiaries"></mat-tab>
+      <mat-tab label="Transactions"></mat-tab>
+      <mat-tab label="Payments"></mat-tab>
+      <mat-tab label="Rates"></mat-tab>
+      <mat-tab label="System Details"></mat-tab>
+    </mat-tab-group>
+    <div class="subtitle">
+      <span>Role: MARx System Administrator</span>
+    </div>
+  </mat-toolbar>
+  <lib-back-toolbar
+    url="/elmo"
+    urlLabel="back to ELMO snapshot"
+  ></lib-back-toolbar>
+  <div class="search-container">
+    <lib-beneficiary-search></lib-beneficiary-search>
+  </div>
+  <app-dashboard></app-dashboard>
+</div>

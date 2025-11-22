@@ -1,0 +1,51 @@
+@import '../../../theme-colors';
+
+.cms-logo {
+  font-weight: 300;
+  font-size: 2rem;
+}
+.divider {
+  height: 80%;
+}
+
+.logo-container {
+  display: flex;
+  gap: 0.5rem;
+  height: 90%;
+  align-items: center;
+}
+
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-blue;
+}
+
+.my-apps {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  .title {
+    font-size: 1rem;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  a {
+    font-size: 1rem;
+    text-decoration: underline;
+  }
+  .logout {
+    cursor: pointer;
+  }
+}
