@@ -1,10 +1,10 @@
-import { BeneficiaryService } from './../../../services/beneficiary/beneficiary.service';
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { IEntitlement } from '../../types/entitlement';
 import { IEligibility } from '../../types/eligibility';
 import { IEnrollment } from '../../types/enrollment';
+import { IEntitlement } from '../../types/entitlement';
+import { BeneficiaryService } from './../../../services/beneficiary/beneficiary.service';
 
 const ENTITLEMENTS: IEntitlement[] = [
   {

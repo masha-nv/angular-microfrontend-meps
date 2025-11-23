@@ -17,6 +17,5 @@ export class ElmoApp implements OnInit {
 
   ngOnInit(): void {
     this.beneId = this.route.firstChild?.snapshot.paramMap.get('beneId') ?? '';
-    console.log('ELMO-APP BENEID', this.beneId);
   }
 }

@@ -1,3 +1,6 @@
+@if(this.route.firstChild === null) {
 <lib-beneficiary-search
   (handleSearch)="search($event)"
 ></lib-beneficiary-search>
+}
+<router-outlet></router-outlet>

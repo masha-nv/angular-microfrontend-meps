@@ -17,10 +17,6 @@ export class DashboardMenu implements OnInit {
   activated = menuItems[0];
   itemSelection = output<string>();
 
-  constructor() {
-    console.log('DashboardMenu constructor');
-  }
-
   ngOnInit(): void {
     this.handleItemSelect(menuItems[0]);
   }

@@ -1,0 +1,18 @@
+@use 'sass:map';
+@import '../../../../../theme-colors';
+
+a {
+  color: map.get(map.get($_palettes, primary), 50);
+}
+mat-icon {
+  color: map.get(map.get($_palettes, secondary), 30);
+  font-size: 1rem;
+  height: auto;
+  width: auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

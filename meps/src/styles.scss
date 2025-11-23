@@ -1,10 +1,6 @@
 @use '@angular/material' as mat;
 @import '../../theme-colors';
 
-a {
-  color: white;
-}
-
 html {
   // color-scheme: light dark;
   @include mat.theme(

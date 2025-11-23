@@ -22,7 +22,6 @@ export class BeneficiarySearch {
   search() {
     const searchValue = this.searchForm.get('bene')?.value;
     if (searchValue) {
-      console.log(searchValue);
       this.handleSearch.emit(searchValue);
     }
   }
