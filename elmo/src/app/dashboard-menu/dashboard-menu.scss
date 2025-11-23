@@ -1,0 +1,15 @@
+@use 'sass:map';
+@import '../../../../theme-colors';
+
+mat-list-item.mat-mdc-list-item {
+  cursor: pointer;
+}
+
+.active-item {
+  border-left: 0.2rem solid;
+  border-color: map.get(map.get($_palettes, primary), 35);
+  .menu-item-label {
+    color: map.get(map.get($_palettes, primary), 35);
+    font-weight: 500;
+  }
+}

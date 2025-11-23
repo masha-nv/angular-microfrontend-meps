@@ -1,0 +1,15 @@
+<mat-toolbar class="elmo-toolbar">
+  <div class="marx-logo">
+    <h1>ELMO</h1>
+  </div>
+  <div class="subtitle">
+    <span>Role: MARx System Administrator</span>
+  </div>
+</mat-toolbar>
+<lib-back-toolbar
+  [url]="`/marx/dashboard/${beneId}/snapshot`"
+  urlLabel="launch MARx snapshot of beneficiary"
+></lib-back-toolbar>
+<div class="apps-container">
+  <router-outlet></router-outlet>
+</div>

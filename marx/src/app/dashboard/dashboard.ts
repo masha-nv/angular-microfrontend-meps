@@ -7,7 +7,7 @@ import { filter, map, Observable, of, tap } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DashboardMenu } from '../dashboard-menu/dashboard-menu';
-import { IMenuItem } from '../../types/menu-item';
+import { IMenuItem } from '../../../../shared/types/menu-item';
 import { IBeneficiary } from 'shared/types/beneficiary';
 
 @Component({
@@ -30,24 +30,19 @@ export class Dashboard implements OnInit {
   private beneficiaryService = inject(BeneficiaryService);
 
   beneficiaryDetails$ = this.beneficiaryService.selectedBeneficiary$;
-  id = '';
+  id = this.route.snapshot.paramMap.get('beneId');
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params: any) => {
-      if (params.params.beneId) {
-        this.beneficiaryService
-          .searchBeneficiary(params.params.beneId)
-          .pipe(
-            filter((val) => val.success),
-            map((val) => val.beneficiary!),
-            tap(() => (this.id = params.params.beneId))
-          )
-          .subscribe();
-      }
-    });
+    if (!this.id) return;
+    this.beneficiaryService.searchBeneficiary(this.id).subscribe();
   }
 
   onMenuItemChange(url: string) {
-    this.router.navigate(['marx', 'dashboard', this.id, url]);
+    this.router.navigate([
+      'marx',
+      'dashboard',
+      this.route.snapshot.paramMap.get('beneId'),
+      url,
+    ]);
   }
 }

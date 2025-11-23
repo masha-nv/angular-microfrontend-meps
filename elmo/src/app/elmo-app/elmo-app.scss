@@ -1,0 +1,42 @@
+@use 'sass:map';
+@import '../../../../theme-colors';
+
+.elmo-toolbar {
+  background-color: $primary-blue;
+  height: 3.125rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 5rem;
+  border-top: 1px solid map.get(map.get($_palettes, primary), 80);
+}
+
+.marx-logo {
+  display: flex;
+  gap: 0.7rem;
+  h1 {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  span {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0;
+    line-height: 0.8rem;
+  }
+}
+
+mat-tab-group {
+  color: white;
+}
+
+.search-container {
+  margin-top: 2rem;
+  margin-inline: 2rem;
+}

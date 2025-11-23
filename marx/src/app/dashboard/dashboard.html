@@ -1,8 +1,9 @@
-@if(beneficiaryDetails$ | async; as bene) {
 <div>
   <div class="header">
     <div class="left">
+      @if(beneficiaryDetails$ | async; as bene) {
       <h2 class="title">{{bene.lastName}}, {{bene.firstName}}</h2>
+      }
       <div class="small-text">
         <em>Populated for 11/06/2025 </em>
         <div>
@@ -32,4 +33,3 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-}

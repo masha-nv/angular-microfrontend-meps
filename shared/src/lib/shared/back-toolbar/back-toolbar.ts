@@ -1,8 +1,8 @@
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
-import { Component, input, OnInit } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -14,8 +14,12 @@ import { Component, input, OnInit } from '@angular/core';
 export class LibBackToolbar implements OnInit {
   url = input.required();
   urlLabel = input.required();
-
+  backgroundColor = '';
+  position: 'left' | 'right' = 'left';
+  route = inject(ActivatedRoute);
+  beneId = '';
+  routerLink = '';
   ngOnInit(): void {
-    console.log('URL', this.url);
+    this.beneId = this.route.snapshot.paramMap.get('beneId') ?? '';
   }
 }
