@@ -10,18 +10,28 @@ export const remoteRoutes: Route[] = [
     component: MarxApp,
     children: [
       {
-        path: 'dashboard/:beneId',
-        component: Dashboard,
+        path: 'beneficiaries',
+        data: { breadcrumb: 'Beneficiaries' },
         children: [
           {
-            path: 'snapshot',
-            component: Snapshot,
+            path: 'search',
+            component: BeneSearch,
+            data: { breadcrumb: 'Search', url: 'marx/beneficiaries/search' },
+            children: [
+              {
+                path: ':beneId',
+                component: Dashboard,
+                children: [
+                  {
+                    path: 'snapshot',
+                    component: Snapshot,
+                    data: { breadcrumb: 'Snapshot' },
+                  },
+                ],
+              },
+            ],
           },
         ],
-      },
-      {
-        path: 'search',
-        component: BeneSearch,
       },
     ],
   },

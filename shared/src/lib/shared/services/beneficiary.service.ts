@@ -22,7 +22,6 @@ export class BeneficiaryService {
   }
 
   handleSelectBeneficiary(bene: IBeneficiary) {
-    console.log('service bene', bene);
     this.selectedBeneficiary.next(bene);
   }
 
@@ -36,7 +35,6 @@ export class BeneficiaryService {
       .pipe(
         map((beneficiaries) => {
           const beneficiary = beneficiaries[beneficiaryId];
-          console.log('found', beneficiaries);
           if (beneficiary) {
             this.handleSelectBeneficiary(beneficiary);
             return { success: true, beneficiary };

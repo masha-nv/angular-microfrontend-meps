@@ -1,0 +1,10 @@
+@if(breadcrumbs$ | async; as breadcrumbs) {
+<div class="container">
+  @for(b of breadcrumbs; track b.label; let last = $last) { @if(!last) {
+  <a [routerLink]="b.url">{{b.label}}</a>
+  <mat-icon>arrow_forward_ios</mat-icon>
+  } @else {
+  <span>{{b.label}}</span>
+  } }
+</div>
+}
