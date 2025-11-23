@@ -1,7 +1,12 @@
 <form [formGroup]="searchForm">
+  <h2>Search Beneficiary</h2>
   <mat-form-field appearance="outline">
     <mat-label for="">Search</mat-label>
     <input matInput type="search" formControlName="bene" />
   </mat-form-field>
-  <button [disabled]="searchForm.invalid" mat-button>Search</button>
+  <div>
+    <button [disabled]="searchForm.invalid" (click)="search()" mat-flat-button>
+      Search
+    </button>
+  </div>
 </form>

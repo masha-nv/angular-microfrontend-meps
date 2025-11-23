@@ -2,7 +2,8 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { IBeneficiary, BeneficiaryDatabase } from '@org/shared';
+import { BeneficiaryDatabase } from '../../models/beneficiary.interface';
+import { IBeneficiary } from '../../../../types/beneficiary';
 
 @Injectable({
   providedIn: 'root',

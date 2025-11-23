@@ -1,0 +1,16 @@
+@if(beneficiaryDetails$ | async; as bene) {
+<div class="container">
+  <div class="left">
+    <h2>Beneficiary Details</h2>
+    <div class="bene-details">
+      @for( item of bene | keyvalue ; track item.key) {
+      <div class="details-row">
+        <span class="label">{{item.key | titlecase}}</span>
+        <span class="value">{{item.value | titlecase}}</span>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="right"></div>
+</div>
+}

@@ -72,11 +72,11 @@
       <div class="info-grid">
         <div class="info-item">
           <label>ID:</label>
-          <span>{{ selectedBeneficiary.id }}</span>
+          <span>{{ selectedBeneficiary.beneficiaryId }}</span>
         </div>
         <div class="info-item">
           <label>Name:</label>
-          <span>{{ selectedBeneficiary.name }}</span>
+          <span>{{ selectedBeneficiary.lastName }}</span>
         </div>
         <div class="info-item">
           <label>Status:</label>
@@ -86,10 +86,6 @@
           >
             {{ selectedBeneficiary.status }}
           </span>
-        </div>
-        <div class="info-item">
-          <label>Benefits:</label>
-          <span>{{ selectedBeneficiary.benefits.join(', ') }}</span>
         </div>
       </div>
     </div>
@@ -168,7 +164,7 @@
         <span class="btn-icon">→</span>
         Link to Application 2 (MARX)
         <small *ngIf="selectedBeneficiary"
-          >Transfer: {{ selectedBeneficiary.id }}</small
+          >Transfer: {{ selectedBeneficiary.beneficiaryId }}</small
         >
       </button>
     </div>

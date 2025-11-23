@@ -138,3 +138,15 @@ $_rest: (
 
 $primary-palette: map.merge(map.get($_palettes, primary), $_rest);
 $tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
+
+.mat-mdc-unelevated-button,
+.mat-mdc-button-base {
+  &:not(:disabled) {
+    background-color: $primary-blue !important;
+  }
+  border-radius: 5px !important;
+}
+
+.apps-container {
+  margin-inline: 2rem;
+}

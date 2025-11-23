@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+.left {
+  width: 50%;
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+}
+.details-row {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #dbd9dd;
+  line-height: 3.5rem;
+}
+
+.label {
+  background-color: #e9e7eb;
+  width: 50%;
+  text-align: end;
+  padding-right: 0.3rem;
+  span {
+    font-weight: 500;
+  }
+}
+
+.value {
+  width: 100%;
+  span {
+    font-weight: 200;
+  }
+}
+
+.bene-details {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
