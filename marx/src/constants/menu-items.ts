@@ -1,4 +1,4 @@
-import { IMenuItem } from '../types/menu-item';
+import { IMenuItem } from '../../../shared/types/menu-item';
 
 export const menuItems: IMenuItem[] = [
   { label: 'Snapshot', key: 'snapshot', url: '/snapshot' },

@@ -52,7 +52,4 @@ export class Snapshot {
   dataSourceEntitlement = ENTITLEMENTS;
   dataSourceEligibility = ELIBILITYS;
   dataSourceEnrollment = ENROLLMENTS;
-
-  constructor() {}
 }
-// #f0f2f5;

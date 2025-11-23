@@ -1,0 +1,13 @@
+<mat-list>
+  @for(item of items; track item.key; let idx = $index; let last = $last) {
+  <mat-list-item
+    (click)="handleItemSelect(item)"
+    [activated]="activated === item"
+    [ngClass]="{'active-item': activated === item}"
+  >
+    <span class="menu-item-label"> {{item.label}} </span>
+  </mat-list-item>
+  @if(!last) {
+  <mat-divider></mat-divider>
+  } }
+</mat-list>

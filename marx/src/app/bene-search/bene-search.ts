@@ -2,11 +2,8 @@ import { Component, inject, OnInit } from '@angular/core';
 import { MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterModule } from '@angular/router';
-import {
-  LibBackToolbar,
-  BeneficiarySearch,
-  BeneficiaryService,
-} from '@org/shared';
+import { LibBackToolbar, BeneficiarySearch } from '@org/shared';
+import { BeneficiaryService } from '../../../services/beneficiary/beneficiary.service';
 import { tap } from 'rxjs';
 
 @Component({

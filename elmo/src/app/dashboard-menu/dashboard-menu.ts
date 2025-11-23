@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, output } from '@angular/core';
+import { Component, OnInit, output } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { menuItems } from '../../constants/menu-items';
 import { MatDividerModule } from '@angular/material/divider';
 import { IMenuItem } from 'shared/types/menu-item';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-dasboard-menu',
+  selector: 'app-dashboard-menu',
   styleUrls: ['./dashboard-menu.scss'],
   templateUrl: './dashboard-menu.html',
   standalone: true,
@@ -17,7 +16,10 @@ export class DashboardMenu implements OnInit {
   items = menuItems;
   activated = menuItems[0];
   itemSelection = output<string>();
-  route = inject(ActivatedRoute);
+
+  constructor() {
+    console.log('DashboardMenu constructor');
+  }
 
   ngOnInit(): void {
     this.handleItemSelect(menuItems[0]);
