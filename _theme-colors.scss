@@ -150,3 +150,15 @@ $tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
 .apps-container {
   margin-inline: 2rem;
 }
+
+.mat-mdc-row.mdc-data-table__row {
+  background-color: white;
+}
+
+.mdc-data-table__header-cell {
+  border-bottom: 1px solid #74777f !important;
+}
+
+.mat-mdc-cell {
+  border-bottom: 1px solid #dbd9dd !important;
+}
