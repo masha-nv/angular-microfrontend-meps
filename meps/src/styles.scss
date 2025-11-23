@@ -6,13 +6,12 @@ a {
 }
 
 html {
-  color-scheme: light dark;
+  // color-scheme: light dark;
   @include mat.theme(
     (
       color: (
         primary: $primary-palette,
         tertiary: $tertiary-palette,
-        theme-type: light,
       ),
       typography: (
         plain-family: Roboto,
@@ -25,12 +24,6 @@ html {
     )
   );
 
-  @include mat.divider-overrides(
-    (
-      width: 0.2rem,
-      color: #6377a0,
-    )
-  );
   @include mat.toolbar-overrides(
     (
       // container-background-color: $primary-blue,
@@ -49,6 +42,12 @@ html {
       active-label-text-color: white,
       active-ripple-color: white,
       divider-color: $primary-red,
+    )
+  );
+
+  @include mat.button-overrides(
+    (
+      outlined-outline-color: $primary-blue,
     )
   );
 }

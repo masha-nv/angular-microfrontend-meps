@@ -1,20 +1,41 @@
 {
   "BENE001": {
-    "id": "BENE001",
-    "name": "John Doe",
-    "status": "Active",
-    "benefits": ["Health", "Dental"]
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "beneficiaryId": "BENE001",
+    "birthDate": "05/14/1978",
+    "dateOfDeath": "--",
+    "age": 47,
+    "sex": "Female",
+    "address": "456 Oak Street",
+    "state": "CA",
+    "county": "Los Angeles County",
+    "status": "Active"
   },
   "BENE002": {
-    "id": "BENE002",
-    "name": "Jane Smith",
-    "status": "Active",
-    "benefits": ["Health", "Vision"]
+    "firstName": "Bob ",
+    "lastName": "Johnson",
+    "beneficiaryId": "BENE002",
+    "birthDate": "11/22/1965",
+    "dateOfDeath": "--",
+    "age": 58,
+    "sex": "Male",
+    "address": "789 Maple Avenue",
+    "state": "NY",
+    "county": "Kings County",
+    "status": "Active"
   },
   "BENE003": {
-    "id": "BENE003",
-    "name": "Bob Johnson",
-    "status": "Inactive",
-    "benefits": ["Health"]
+    "firstName": "Carol ",
+    "lastName": "Davis",
+    "beneficiaryId": "BENE003",
+    "birthDate": "02/03/1982",
+    "dateOfDeath": "--",
+    "age": 41,
+    "sex": "Female",
+    "address": "123 Pine Road",
+    "state": "TX",
+    "county": "Harris County",
+    "status": "Active"
   }
 }

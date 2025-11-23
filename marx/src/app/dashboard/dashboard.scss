@@ -1,0 +1,36 @@
+@use 'sass:map';
+@import '../../../../theme-colors';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.small-text {
+  color: map.get(map.get($_palettes, secondary), 40);
+  font-size: 0.7rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  div {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+}
+
+.right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  gap: 2rem;
+}

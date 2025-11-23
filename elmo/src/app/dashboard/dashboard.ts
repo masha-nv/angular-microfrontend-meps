@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Beneficiary } from '@org/shared';
+import { IBeneficiary } from '@org/shared';
 import { BeneficiaryService } from '../services/beneficiary/beneficiary.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { BeneficiaryService } from '../services/beneficiary/beneficiary.service'
 })
 export class Dashboard implements OnInit {
   currentUser: any = null;
-  selectedBeneficiary: Beneficiary | null = null;
+  selectedBeneficiary: IBeneficiary | null = null;
   eligibilityDetails: any = null;
   errorMessage = '';
   isLoading = false;
@@ -84,7 +84,7 @@ export class Dashboard implements OnInit {
 
   navigateToMarx(): void {
     // Navigate to MARX with current beneficiary ID for auto-search
-    const beneficiaryId = this.selectedBeneficiary?.id || '';
+    const beneficiaryId = this.selectedBeneficiary?.beneficiaryId || '';
     if (beneficiaryId) {
       this.router.navigate(['/marx'], {
         queryParams: {

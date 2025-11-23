@@ -1,10 +1,4 @@
-export interface Beneficiary {
-  id: string;
-  name: string;
-  status: string;
-  benefits: string[];
-}
-
+import { IBeneficiary } from './../../../types/beneficiary';
 export interface BeneficiaryDatabase {
-  [key: string]: Beneficiary;
+  [key: string]: IBeneficiary;
 }
