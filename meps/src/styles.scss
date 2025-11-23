@@ -50,4 +50,11 @@ html {
       outlined-outline-color: $primary-blue,
     )
   );
+
+  @include mat.table-overrides(
+    (
+      row-item-outline-color: white,
+      background-color: #f5f5f5,
+    )
+  );
 }
