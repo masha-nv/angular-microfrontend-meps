@@ -5,8 +5,10 @@
 @use '@angular/material' as mat;
 
 // Note: Color palettes are generated from primary: #12294d
-$primary-blue: #12294d;
-$primary-red: #bb2739;
+$primary-blue: #0E2C53;
+$primary-red: #CC0033;
+$base-dark: #565C65;
+$base-light: #F0F0F0;
 
 $_palettes: (
   primary: (

@@ -1,0 +1,24 @@
+@import '../../../../theme-colors';
+
+.pii-container {
+    display: flex;
+    flex-direction: column;
+    color: $base-dark;
+    font-style: italic;
+    font-family: sans-serif;
+    font-family: "Public Sans";
+    font-size: 16px;
+    line-height: 26px; /* 162.5% */ 
+}
+
+.row {
+    display: flex;
+    gap: 2rem;
+}
+
+.item {
+    font-weight: normal;
+    .pii-label {
+        font-weight: 600;
+    }
+}
