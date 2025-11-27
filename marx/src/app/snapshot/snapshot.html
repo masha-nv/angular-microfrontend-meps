@@ -1,7 +1,9 @@
 <div class="snapshot-header">
-  <em>Populated for 11/06/2025 </em>
+  <em>Snapshot data populated for {{snapshotDate?.value | date : 'MM/dd/yyyy'}} </em>
   <div>
-    <mat-icon>calendar_month</mat-icon>
+    <input class="date-input" matInput [matDatepicker]="picker" [formControl]="snapshotDate" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker  #picker></mat-datepicker>
     <span>Set Snapshot Date</span>
   </div>
   <div>

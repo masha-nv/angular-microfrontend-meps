@@ -51,6 +51,11 @@
   font-size: 14px;
 }
 
+.date-input {
+  visibility: hidden;
+  width: 0.1px;
+}
+
 .label {
   background-color: $base-light;
   width: 50%;

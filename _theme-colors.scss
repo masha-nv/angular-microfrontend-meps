@@ -140,7 +140,9 @@ $tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
 .mat-mdc-unelevated-button,
 .mat-mdc-button-base {
   &:not(:disabled) {
-    background-color: map.get(map.get($_palettes, primary), 20) !important;
+    &:not(.mdc-icon-button) {
+      // background-color: map.get(map.get($_palettes, primary), 20) !important;
+    }
   }
   border-radius: 5px !important;
 }
