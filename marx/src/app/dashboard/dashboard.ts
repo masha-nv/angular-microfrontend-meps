@@ -6,6 +6,7 @@ import { BeneficiaryService } from '../../../services/beneficiary/beneficiary.se
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DashboardMenu } from '../dashboard-menu/dashboard-menu';
+import { PiiBannerComponent } from '../pii-banner/pii-banner';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +17,7 @@ import { DashboardMenu } from '../dashboard-menu/dashboard-menu';
     MatButtonModule,
     MatIconModule,
     RouterModule,
+    PiiBannerComponent,
     DashboardMenu,
   ],
   templateUrl: './dashboard.html',

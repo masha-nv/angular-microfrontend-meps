@@ -5,6 +5,7 @@ import { IEligibility } from '../../types/eligibility';
 import { IEnrollment } from '../../types/enrollment';
 import { IEntitlement } from '../../types/entitlement';
 import { BeneficiaryService } from './../../../services/beneficiary/beneficiary.service';
+import { MatIconModule } from '@angular/material/icon';
 
 const ENTITLEMENTS: IEntitlement[] = [
   {
@@ -39,7 +40,7 @@ const ENROLLMENTS: IEnrollment[] = [
   styleUrls: ['./snapshot.scss'],
   templateUrl: './snapshot.html',
   standalone: true,
-  imports: [CommonModule, MatTableModule],
+  imports: [CommonModule, MatTableModule, MatIconModule],
 })
 export class Snapshot {
   private beneficiaryService = inject(BeneficiaryService);
