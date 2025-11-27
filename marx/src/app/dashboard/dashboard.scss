@@ -18,6 +18,15 @@
   line-height: normal;
 }
 
+.mat-mdc-unelevated-button,
+.mat-mdc-button-base {
+  &:not(:disabled) {
+    &:not(.mdc-icon-button) {
+      background-color: map.get(map.get($_palettes, primary), 20) !important;
+    }
+  }
+  border-radius: 5px !important;
+}
 
 
 .right {

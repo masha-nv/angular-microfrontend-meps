@@ -1,11 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { IEligibility } from '../../types/eligibility';
 import { IEnrollment } from '../../types/enrollment';
 import { IEntitlement } from '../../types/entitlement';
 import { BeneficiaryService } from './../../../services/beneficiary/beneficiary.service';
-import { MatIconModule } from '@angular/material/icon';
 
 const ENTITLEMENTS: IEntitlement[] = [
   {
@@ -40,10 +44,12 @@ const ENROLLMENTS: IEnrollment[] = [
   styleUrls: ['./snapshot.scss'],
   templateUrl: './snapshot.html',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatIconModule],
+  imports: [CommonModule, ReactiveFormsModule, MatTableModule, MatIconModule, MatDatepickerModule, MatInputModule],
+  providers: [provideNativeDateAdapter()],
 })
-export class Snapshot {
+export class Snapshot  {
   private beneficiaryService = inject(BeneficiaryService);
+  snapshotDate = new FormControl(new Date('2025-11-06'));
 
   beneficiaryDetails$ = this.beneficiaryService.selectedBeneficiary$;
 
@@ -53,4 +59,10 @@ export class Snapshot {
   dataSourceEntitlement = ENTITLEMENTS;
   dataSourceEligibility = ELIBILITYS;
   dataSourceEnrollment = ENROLLMENTS;
+
+  
+
+  selectedChange(date: any) {
+    console.log('Selected date: ', date);
+  }
 }
