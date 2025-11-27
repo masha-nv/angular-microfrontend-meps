@@ -5,7 +5,7 @@
     flex-direction: column;
     color: $base-dark;
     font-style: italic;
-    font-family: sans-serif;
+    font-family: Roboto;
     font-family: "Public Sans";
     font-size: 16px;
     line-height: 26px; /* 162.5% */ 
@@ -18,7 +18,8 @@
 
 .item {
     font-weight: normal;
+    font-family: Roboto;
     .pii-label {
-        font-weight: 600;
+        font-weight: 500;
     }
 }
