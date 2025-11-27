@@ -2,8 +2,13 @@
 @import '../../../../../theme-colors';
 
 a {
-  color: map.get(map.get($_palettes, primary), 50);
+  color: $light-primary-blue;
+  font-family: Roboto;
 }
+span.current {
+  font-family: Roboto;
+}
+
 mat-icon {
   color: map.get(map.get($_palettes, secondary), 30);
   font-size: 1rem;

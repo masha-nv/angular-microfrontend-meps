@@ -12,7 +12,7 @@
 @if(beneficiaryDetails$ | async; as bene) {
 <div class="container">
   <div class="left">
-    <h2>Beneficiary Details</h2>
+    <h2 class="sub-title">Beneficiary Details</h2>
     <div class="bene-details">
       @for( item of bene | keyvalue ; track item.key) {
       <div class="details-row">
@@ -24,7 +24,7 @@
   </div>
   <div class="right">
     <div>
-      <h2>Entitlement</h2>
+      <h2 class="sub-title">Entitlement</h2>
       <table mat-table [dataSource]=" dataSourceEntitlement">
         <!-- Part Column -->
         <ng-container matColumnDef="part">
@@ -58,7 +58,7 @@
       </table>
     </div>
     <div>
-      <h2>Eligibility</h2>
+      <h2 class="sub-title">Eligibility</h2>
       <table mat-table [dataSource]="dataSourceEligibility">
         <!-- Part Column -->
         <ng-container matColumnDef="part">
@@ -86,7 +86,7 @@
       </table>
     </div>
     <div>
-      <h2>Enrollment</h2>
+      <h2 class="sub-title">Enrollment</h2>
       <table mat-table [dataSource]="dataSourceEnrollment">
         <!-- Part Column -->
         <ng-container matColumnDef="part">

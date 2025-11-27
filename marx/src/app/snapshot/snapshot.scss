@@ -3,16 +3,15 @@
 
 .snapshot-header {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  
   background-color: $base-light;
-  color: var(--Base-base-dark, $base-dark);
-  font-family: sans-serif;
+  color: $base-dark;
+  font-family: Roboto;
   font-size: 16px;
   font-style: italic;
   font-weight: 400;
   line-height: 26px; /* 162.5% */
-  display: flex;
+  
   padding: 8px 0;
   justify-content: center;
   align-items: center;
@@ -28,6 +27,7 @@
 .container {
   display: flex;
   gap: 2rem;
+  color: $base-ink;
 }
 
 .left {
@@ -46,13 +46,17 @@
   gap: 1rem;
   border-bottom: 1px solid #dbd9dd;
   line-height: 3.24rem;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .label {
   background-color: $base-light;
   width: 50%;
   text-align: end;
-  padding-right: 0.3rem;
+  font-weight: 500;
+  padding-right: 0.5rem;
   span {
     font-weight: 500;
   }
@@ -69,4 +73,16 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+
+.sub-title {
+  color: #000;
+  /* H3 */
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }

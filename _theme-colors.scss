@@ -4,20 +4,16 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-// Note: Color palettes are generated from primary: #12294d
-$primary-blue: #0E2C53;
-$primary-red: #CC0033;
-$base-dark: #565C65;
-$base-light: #F0F0F0;
+
 
 $_palettes: (
   primary: (
     0: #000000,
     10: #011b3e,
-    20: #1a3054,
+    20: #0E2C53,
     25: #263b60,
     30: #32476c,
-    35: #3e5279,
+    35: #005EA2,
     40: #4a5e86,
     50: #6377a0,
     60: #7c91bb,
@@ -144,7 +140,7 @@ $tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
 .mat-mdc-unelevated-button,
 .mat-mdc-button-base {
   &:not(:disabled) {
-    background-color: $primary-blue !important;
+    background-color: map.get(map.get($_palettes, primary), 20) !important;
   }
   border-radius: 5px !important;
 }
@@ -164,3 +160,11 @@ $tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
 .mat-mdc-cell {
   border-bottom: 1px solid #dbd9dd !important;
 }
+
+// Note: Color palettes are generated from primary: #12294d
+$primary-blue: #0E2C53;
+$light-primary-blue: map.get(map.get($_palettes, primary), 35);
+$primary-red: #CC0033;
+$base-dark: #565C65;
+$base-light: #F0F0F0;
+$base-ink: #1B1B1B;
